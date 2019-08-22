@@ -4,9 +4,9 @@
 
 
 ### Pull some image 
-docker pull alpine:latest
-docker pull openjdk:14-jdk-alpine3.10
-docker pull centos:centos7
+- docker pull alpine:latest
+- docker pull openjdk:14-jdk-alpine3.10
+- docker pull centos:centos7
 
 
 ### Exercise Material
