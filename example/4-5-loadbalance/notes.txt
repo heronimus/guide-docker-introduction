@@ -1,0 +1,16 @@
+haproxy
+
+minus:
+  - in docker compose, only work within internal services in single node (one compose environment)
+
+plus:
+  -  will work best on docker swarm (can enable multi node)
+
+nginx
+
+minus:
+  - need additional configuration (nginx.conf) and deeper understanding
+
+plus:
+  - can also work with external services
+  - more configurable
