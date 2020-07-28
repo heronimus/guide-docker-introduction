@@ -8,6 +8,10 @@ services:
       - 50000:50000
     volumes:
         - jenkins_home:/var/jenkins_home
+volumes:
+  jenkins_home:
+    ## Use external volume, instead create new from docker-compose
+    external: true
 
 ## Show Jenkins initial PASSWORD:
 ##    docker exec future-jenkins cat /var/jenkins_home/secrets/initialAdminPassword
