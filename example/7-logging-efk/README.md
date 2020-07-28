@@ -28,8 +28,9 @@ In this guide, we will separate the docker-compose to run the EFK stack and dock
 
 
   - Now that both EFK stack and your "Web" stack already run, open kibana at your port 5601.
-  - On the Kibana dashboard, setup the `index name or pattern`. Specify `fluentd-*` to Index name or pattern and click **Create**.
+  - On the Kibana dashboard, setup the `index name or pattern`. Go to **Management** --> **Kibana-Index Patterns** --> **Create Index Patterns** --> Specify `fluentd-*` to Index pattern, next select `@timestamp` for time filtering and click **Create**.
   - Now on the Kibana dashboard, go to **"Discover"** and you will see your log from container.
+  
 Reference:
 https://github.com/digikin/fluentd-elastic-kibana
 https://docs.fluentd.org/container-deployment/docker-compose
