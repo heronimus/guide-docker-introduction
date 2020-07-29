@@ -1,0 +1,6 @@
+package_yang_harus_diinstall:
+  - epel-release
+  - git
+  - tar
+  - zip
+  - yum-utils

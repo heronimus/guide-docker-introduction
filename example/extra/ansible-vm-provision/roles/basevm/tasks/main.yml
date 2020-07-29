@@ -1,0 +1,27 @@
+- name: "BASE PACKAGE: Installing base packages"
+  yum:
+    name: "{{ package_yang_harus_diinstall }}"
+    state: latest
+
+# - name: "Yum config manager ......."
+#   shell:
+#   args:
+#     cmd: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# - name: Add repository docker
+#   yum_repository:
+#     name: docker
+#     description: Docker YUM repo
+#     baseurl: ttps://download.docker.com/linux/centos/docker-ce.repo
+
+# - name: Download docker-compose
+#   get_url:
+#     url: https://github.com/docker/compose/releases/download/1.26.2/docker-compose-Linux-x86_64
+#     dest: /usr/local/bin/docker-compose
+#     mode: '0755'
+
+- name: "Create new file: /opt/test"
+  copy:
+    dest: /opt/test
+    content: 'new file'
+    mode: 0440
