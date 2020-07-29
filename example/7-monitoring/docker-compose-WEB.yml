@@ -1,0 +1,43 @@
+version: '3'
+services:
+  web:
+    build: ../4-flask-redis
+    image: future-flask-redis:latest
+    ports:
+      - 5000
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: web-python-flasks
+  redis:
+    image: redis:alpine
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: redis
+  nginx:
+    image: nginx:latest
+    ports:
+        - 8080:80
+    volumes:
+        - "../5-loadbalance/nginx/nginx.conf:/etc/nginx/nginx.conf"
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: nginx-loadbalance
+  cadvisor:
+    image: gcr.io/google-containers/cadvisor:latest
+    container_name: cadvisor
+    ports:
+    - 9000:8080
+    tmpfs:
+      - /tmp
+      - /run
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
