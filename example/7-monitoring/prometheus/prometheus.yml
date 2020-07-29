@@ -4,4 +4,4 @@ scrape_configs:
   static_configs:
   - targets:
     - cadvisor:9000
-    - 127.0.0.1:9000
+    - 127.0.0.1:9001
