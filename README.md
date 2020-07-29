@@ -3,8 +3,12 @@
 ## Introduction to Docker Example
 
 ### Example
-- 1 Hello John Docker
-- 2 Hello World / John
-- 3 Springboot web
-- 4 Python Flask - redis
-- 5 Swarm
+- 1 Hello John Doe
+- 2 Hello ${World / John}
+- 3 Springboot Web
+- 4 Python Flask - Redis
+- 5 Load Balancer
+- 6 Logging EFK
+- 7 Monitoring
+- 8 Swarm
+- 9 Jenkins
