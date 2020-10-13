@@ -26,5 +26,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-
+networks:
+  default:
+    driver: overlay
+    
 ##node.role=worker
